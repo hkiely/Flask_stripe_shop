@@ -1,0 +1,12 @@
+<title> {{ title }}- Paige's Chewy Granola</title>
+
+<nav class="navbar sticky-top bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="{{ url_for('index') }}">
+        <img src="{{ url_for('static', filename='icons/Bee_vector.svg') }}" alt="Logo" width="36" height="28.5" class="d-inline-block align-text-center">
+        Paige's Chewy Granola
+      </a>
+      <a href="{{ url_for('shop') }}" class="btn btn-warning btn-md" role="button"><span class="bi bi-basket2-fill"></span>&nbsp;Shop Now</a>
+
+    </div>
+  </nav>    

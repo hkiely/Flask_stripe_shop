@@ -9,18 +9,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="static/custom.css">
 
-    <title>{% block title %}{% endblock %} - Paige's Chewy Granola</title>
+  {% include "snippets/header.html" %}  
 
-    <nav class="navbar sticky-top bg-body-tertiary">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="{{ url_for('index') }}">
-            <img src="static/bee_vector.svg" alt="Logo" width="36" height="28.5" class="d-inline-block align-text-center">
-            Paige's Chewy Granola
-          </a>
-          <a href="{{ url_for('shop') }}" class="btn btn-warning btn-md" role="button"><span class="bi bi-basket2-fill"></span>&nbsp;Shop Now</a>
-
-        </div>
-      </nav>      
 </head>
 <body>
 
