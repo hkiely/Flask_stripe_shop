@@ -47,6 +47,28 @@ def order(product_id):
                 'quantity': 1,
             },
         ],
+
+    shipping_address_collection={"allowed_countries": ["US", "CA"]},
+    shipping_options=[
+    {
+      "shipping_rate_data": {
+        "type": "fixed_amount",
+        "fixed_amount": {"amount": 0, "currency": "usd"},
+        "display_name": "Local Pickup"},
+        },
+    {
+      "shipping_rate_data": {
+        "type": "fixed_amount",
+        "fixed_amount": {"amount": 700, "currency": "usd"},
+        "display_name": "USPS Priority Mail",
+        "delivery_estimate": {
+          "minimum": {"unit": "business_day", "value": 4},
+          "maximum": {"unit": "business_day", "value": 6},
+            },
+        },
+        },
+    ],
+        
         payment_method_types=['card'],
         mode='payment',
         success_url=request.host_url + 'order/success',
@@ -56,9 +78,9 @@ def order(product_id):
 
 @app.route('/order/success')
 def success():
-    return render_template('success.html')
+    return render_template('success.html', title='Success')
 
 
 @app.route('/order/cancel')
 def cancel():
-    return render_template('cancel.html')
+    return render_template('cancel.html', title='Cancel')
