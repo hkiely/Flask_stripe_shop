@@ -1,5 +1,6 @@
 {% extends "parent.html" %}
 
+
 {% block content %}
 
     <div class="container py-4">
@@ -20,7 +21,7 @@
                       {{ "$%.2f"|format(products[id].price / 100) }} USD
                       {% if products[id].per %}per {{ products[id].per }}{% endif %}</td>
                     <td>
-                      <form method="POST" action="/order/{{ id }}">
+                      <form method="POST" action="/cart/{{ id }}">
                         <input type="submit" value="Order Now!">
                       </form>
                     </td>

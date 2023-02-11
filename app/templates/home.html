@@ -1,7 +1,5 @@
 {% extends "parent.html" %}
 
-{% block title %}Home{% endblock %}
-
 {% block content %}
 
     <div class="container py-4">
@@ -31,90 +29,5 @@
       </div>
 
 
-      <ul id="hexGrid">
-        <li class="hex">
-          <a class="hexIn" href="#">
-            <img src="static/Almonds.jpeg" alt="" />
-            <h1>Almonds</h1>
-            <p>Some sample text about the article this hexagon leads to</p>
-          </a>
-        </li>
-        <li class="hex">
-          <a class="hexIn" href="#">
-            <img src="static/oats.jpeg" alt="" />
-            <h1>Oats</h1>
-            <p>Some sample text about the article this hexagon leads to</p>
-          </a>
-        </li>
-        <li class="hex">
-          <a class="hexIn" href="#">
-            <img src="static/pecans.webp" alt="" />
-            <h1>Pecans</h1>
-            <p>Some sample text about the article this hexagon leads to</p>
-          </a>
-        </li>
-        <li class="hex">
-          <a class="hexIn" href="#">
-            <img src="static/Walnuts.webp" alt="" />
-            <h1>Walnuts</h1>
-            <p>Some sample text about the article this hexagon leads to</p>
-          </a>
-        </li>
-        <li class="hex">
-          <a class="hexIn" href="#">
-            <img src="static/dried_cherries.jpeg" alt="" />
-            <h1>Dried Sweet Cherries</h1>
-            <p>Some sample text about the article this hexagon leads to</p>
-          </a>
-        </li>
-        <li class="hex">
-          <a class="hexIn" href="#">
-            <img src="static/honeycomb.jpeg" alt="" />
-            <h1>Honey</h1>
-            <p>Some sample text about the article this hexagon leads to</p>
-          </a>
-        </li>
-        <li class="hex">
-          <a class="hexIn" href="#">
-            <img src="static/Maple-Tree.jpeg" alt="" />
-            <h1>Maple Syrup</h1>
-            <p>Some sample text about the article this hexagon leads to</p>
-          </a>
-        </li>
-        <li class="hex">
-          <a class="hexIn" href="#">
-            <img src="static/cinnamon.jpeg" alt="" />
-            <h1>Cinnamon</h1>
-            <p>Some sample text about the article this hexagon leads to</p>
-          </a>
-        </li>
-        <li class="hex">
-          <a class="hexIn" href="#">
-            <img src="static/vanillabeans.jpeg" alt="" />
-            <h1>Vanilla</h1>
-            <p>Some sample text about the article this hexagon leads to</p>
-          </a>
-        </li>
-        <li class="hex">
-          <a class="hexIn" href="#">
-            <img src="static/brown_sugar.jpeg" alt="" />
-            <h1>Organic Brown Sugar</h1>
-            <p>Some sample text about the article this hexagon leads to</p>
-          </a>
-        </li>
-        <li class="hex">
-          <a class="hexIn" href="#">
-            <img src="static/Light_olive_oil.jpeg" alt="" />
-            <h1>Light Olive Oil</h1>
-            <p>Some sample text about the article this hexagon leads to</p>
-          </a>
-        </li>
-        <li class="hex">
-          <a class="hexIn" href="#">
-            <img src="static/salt.jpeg" alt="" />
-            <h1>Iodized Salt</h1>
-            <p>Some sample text about the article this hexagon leads to</p>
-          </a>
-        </li>
-      </ul>
+      {% include "snippets/honeycomb_ingredients.html" %}  
 {% endblock %}
