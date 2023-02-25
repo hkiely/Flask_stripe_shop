@@ -45,34 +45,38 @@ def order(product_id):
                     'currency': 'usd',
                 },
                 'quantity': 1,
+                'adjustable_quantity': products[product_id].get(
+                    'adjustable_quantity',
+                    {'enabled': False}
+                ),
             },
         ],
 
     shipping_address_collection={"allowed_countries": ["US", "CA"]},
     shipping_options=[
-    {
-      "shipping_rate_data": {
-        "type": "fixed_amount",
-        "fixed_amount": {"amount": 0, "currency": "usd"},
-        "display_name": "Local Pickup"},
-        },
-    {
-      "shipping_rate_data": {
-        "type": "fixed_amount",
-        "fixed_amount": {"amount": 700, "currency": "usd"},
-        "display_name": "USPS Priority Mail",
-        "delivery_estimate": {
-          "minimum": {"unit": "business_day", "value": 4},
-          "maximum": {"unit": "business_day", "value": 6},
+        {
+        "shipping_rate_data": {
+            "type": "fixed_amount",
+            "fixed_amount": {"amount": 0, "currency": "usd"},
+            "display_name": "Local Pickup"},
             },
-        },
+        {
+        "shipping_rate_data": {
+            "type": "fixed_amount",
+            "fixed_amount": {"amount": 700, "currency": "usd"},
+            "display_name": "USPS Priority Mail",
+            "delivery_estimate": {
+            "minimum": {"unit": "business_day", "value": 4},
+            "maximum": {"unit": "business_day", "value": 6},
+                },
+            },
         },
     ],
         
-        payment_method_types=['card'],
-        mode='payment',
-        success_url=request.host_url + 'order/success',
-        cancel_url=request.host_url + 'order/cancel',
+    payment_method_types=['card'],
+    mode='payment',
+    success_url=request.host_url + 'order/success',
+    cancel_url=request.host_url + 'order/cancel',
     )
     return redirect(checkout_session.url)
 
