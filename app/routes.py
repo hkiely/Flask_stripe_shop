@@ -227,15 +227,7 @@ def delete_cart_item(product_name):
         cart_items = {}
 
     for key in list(cart_items):
-        print('cart items', key, cart_items[key])
-        #if cart_items[key].name == product_name
-        # if key.name == product_name:
-        cart_items.pop(key)
-        print(cart_items)
-        del session[key]
-
-    #cart_items.pop(product_name)
-    # if session[product_name] in cart_items:
-    #     del session[product_name]
+        if cart_items[key]['name'] == product_name:
+            del session[key]
 
     return redirect(url_for('cart'))
