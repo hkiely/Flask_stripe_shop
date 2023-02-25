@@ -4,9 +4,10 @@
 {% block content %}
 
     <div class="container py-4">
+
+      <!-- Miguel's example -->
       <div class="p-5 mb-4 bg-light rounded-3">
-        <div class="container-fluid
-         py-5">
+        <div class="container-fluid py-5">
          <div class="table-responsive">
             <table class="table">
                 <tr>
@@ -21,7 +22,7 @@
                       {{ "$%.2f"|format(products[id].price / 100) }} USD
                       {% if products[id].per %}per {{ products[id].per }}{% endif %}</td>
                     <td>
-                      <form method="POST" action="/cart/{{ id }}">
+                      <form method="POST" action="/order/{{ id }}">
                         <input type="submit" value="Order Now!">
                       </form>
                     </td>
@@ -31,6 +32,36 @@
           </div>
         </div>
       </div>
+      <!-- End of Miguel's example -->
+
+      <!-- Update -->
+      <div class="row align-items-md-stretch mb-4">
+        <div class="col-md-4">
+          <div class="h-100 p-5 bg-light border rounded-3">
+            <img class="img img-fluid" style="width: 350px; height: 200px;" src="{{ url_for('static', filename='images/sample_products/macbook.jpg') }}" alt="">
+            <h2>MacBook Pro</h2>
+            <p>$ 1799</p>
+            <button class="btn btn-outline-secondary" type="button">View</button>
+          </div>
+        </div>
+        <div class="col-md-4">          
+          <div class="h-100 p-5 text-bg-dark rounded-3">
+            <img class="img img-fluid" style="width: 350px; height: 200px;" src="{{ url_for('static', filename='images/sample_products/audio.png') }}" alt="">
+            <h2>Audio Technica</h2>
+            <p>$ 169</p>
+            <button class="btn btn-outline-light" type="button">View</button>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="h-100 p-5 bg-light border rounded-3">
+            <img class="img img-fluid" style="width: 350px; height: 200px;" src="{{ url_for('static', filename='images/sample_products/nothing.jpg') }}" alt="">
+            <h2>Nothing Phone</h2>
+            <p>$ 499</p>
+            <button class="btn btn-outline-secondary" type="button">View</button>
+          </div>
+        </div>
+      </div>
+      <!-- End of update -->
   
       <div class="row align-items-md-stretch">
         <div class="col-md-6">
