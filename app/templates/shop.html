@@ -8,6 +8,7 @@
 
       <!-- Update -->
       <div class="row align-items-md-stretch mb-4">
+        <h2>Latest Update</h2>
         <div class="col-md-4">
           <div class="h-100 p-5 bg-light border rounded-3">
             <img class="img img-fluid" style="width: 350px; height: 200px;" src="{{ url_for('static', filename='images/sample_products/macbook.jpg') }}" alt="">
@@ -43,7 +44,8 @@
 
 
        <!-- Miguel's example -->
-       <div class="p-5 mb-4 bg-light rounded-3">
+       <h2>Miguel's Sample</h2>
+       <div class="p-5 mb-4 bg-light rounded-3">  
         <div class="container-fluid py-5">
          <div class="table-responsive">
             <table class="table">
@@ -59,7 +61,7 @@
                       {{ "$%.2f"|format(products[id].price / 100) }} USD
                       {% if products[id].per %}per {{ products[id].per }}{% endif %}</td>
                     <td>
-                      <form method="POST" action="/order/{{ id }}">
+                      <form method="POST" action=" {{ url_for('product_order', product_id=id) }}">
                         <input type="submit" value="Order Now!">
                       </form>
                     </td>
@@ -75,6 +77,7 @@
 
     <!-- Your original work -->
     <div class="row align-items-md-stretch">
+      <h2>Your Original Work</h2>
       <div class="col-md-6">
         <div class="h-100 p-5 text-bg-dark rounded-3">
           <h2>Change the background</h2>

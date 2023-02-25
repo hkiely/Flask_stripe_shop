@@ -24,7 +24,13 @@
               Price: <strong>$ 169</strong>
             </p>
             <button class="btn btn-outline-secondary" type="button">
-              <a href="#">Add to Cart</a>
+              <a href="{{ url_for('cart_audio_technica') }}">Add to Cart</a>
+            </button>
+            <button class="btn btn-outline-secondary" type="button">
+              <a href="{{ url_for('shop') }}">Continue Shopping</a>
+            </button>
+            <button class="btn btn-outline-secondary" type="button">
+              <a href="{{ url_for('cart') }}">Checkout</a>
             </button>
           </div>
         </div>
