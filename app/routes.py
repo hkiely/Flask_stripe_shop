@@ -88,3 +88,16 @@ def success():
 @app.route('/order/cancel')
 def cancel():
     return render_template('cancel.html', title='Cancel')
+
+
+@app.route('/product/macbook')
+def macbook():
+    return render_template('products/macbook.html', title='Macbook')
+
+@app.route('/product/audio-technica')
+def audio_technica():
+    return render_template('products/audio_technica.html', title='Audio Technica')
+
+@app.route('/product/nothing-phone')
+def nothing_phone():
+    return render_template('products/nothing_phone.html', title='Nothing Phone')

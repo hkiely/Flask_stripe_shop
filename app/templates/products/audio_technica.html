@@ -1,0 +1,38 @@
+{% extends "parent.html" %}
+
+
+{% block content %}
+
+    <div class="container py-4">
+
+
+       <!-- Product details -->
+       <div class="p-5 mb-4 bg-light rounded-3">
+        <div class="container-fluid py-5">
+          <div class="h-100 p-5 bg-light rounded-3">
+            <img class="mb-4 img img-fluid" style="width: 100%; height: 75%;" src="{{ url_for('static', filename='images/sample_products/audio.png') }}" alt="Audio Technica">
+            <h2>Audio Technica ATHM50x</h2>
+            <h3>Specs</h3>
+            <ul>
+              <li>Type: Closed-back dynamic</li>
+              <li>Driver Diameter:	45mm</li>
+              <li>Frequency Response:	15 - 28,000 Hz</li>
+              <li>Maximum Input Power:	1,600 mW @ 1KHz</li>
+              <li>Sensitivity:	99 dB</li>
+            </ul>
+            <p>
+              Price: <strong>$ 169</strong>
+            </p>
+            <button class="btn btn-outline-secondary" type="button">
+              <a href="#">Add to Cart</a>
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- End of Product details -->
+
+
+    
+  
+
+{% endblock %}
