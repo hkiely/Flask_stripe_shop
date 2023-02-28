@@ -1,0 +1,45 @@
+{% extends "parent.html" %}
+
+
+{% block content %}
+
+    <div class="container py-4">
+
+
+       <!-- Product details -->
+       <div class="p-5 mb-4 bg-light rounded-3">
+        <div class="container-fluid py-5">
+         <div class="table-responsive">
+            <table class="table">
+                <tr>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Order</th>
+                    <th>Action</th>
+                  </tr>
+                  {% for name in cart_items %}
+                  <tr>
+                    <td>{{ cart_items[name].name }}</td>
+                    <td>$ {{ "%.2f" | format(cart_items[name].price/100) }}</td>
+                    {% if cart_items[name].per %}
+                        <td>per {{ cart_items[name].per }}</td>
+                    {% endif %}
+                    <td>
+                      <form method="POST" action="/order/{{ name }}">
+                        <input type="submit" value="Order Now!">
+                      </form>
+                    </td>
+                    <td><a href="{{ url_for('delete_cart_item', product_name=cart_items[name].name) }}">Delete item</a></td>
+                  </tr>
+                  {% endfor %}
+            </table>
+          </div>
+        </div>
+      </div>
+      <!-- End of Product details -->
+
+
+    
+  
+
+{% endblock %}

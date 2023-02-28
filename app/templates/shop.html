@@ -4,9 +4,49 @@
 {% block content %}
 
     <div class="container py-4">
-      <div class="p-5 mb-4 bg-light rounded-3">
-        <div class="container-fluid
-         py-5">
+
+
+      <!-- Update -->
+      <div class="row align-items-md-stretch mb-4">
+        <h2>Latest Update</h2>
+        <div class="col-md-4">
+          <div class="h-100 p-5 bg-light border rounded-3">
+            <img class="img img-fluid" style="width: 350px; height: 200px;" src="{{ url_for('static', filename='images/sample_products/macbook.jpg') }}" alt="">
+            <h2>MacBook Pro</h2>
+            <p>$ 1799</p>
+            <button class="btn btn-outline-secondary" type="button">
+              <a href="{{ url_for('macbook') }}">View Product</a>
+            </button>
+          </div>
+        </div>
+        <div class="col-md-4">          
+          <div class="h-100 p-5 text-bg-dark rounded-3">
+            <img class="img img-fluid" style="width: 350px; height: 200px;" src="{{ url_for('static', filename='images/sample_products/audio.png') }}" alt="">
+            <h2>Audio Technica</h2>
+            <p>$ 169</p>
+            <button class="btn btn-outline-light" type="button">
+              <a href="{{ url_for('audio_technica') }}">View Product</a>
+            </button>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="h-100 p-5 bg-light border rounded-3">
+            <img class="img img-fluid" style="width: 350px; height: 200px;" src="{{ url_for('static', filename='images/sample_products/nothing.jpg') }}" alt="">
+            <h2>Nothing Phone</h2>
+            <p>$ 499</p>
+            <button class="btn btn-outline-secondary" type="button">
+              <a href="{{ url_for('nothing_phone') }}">View Product</a>
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- End of update -->
+
+
+       <!-- Miguel's example -->
+       <h2>Miguel's Sample</h2>
+       <div class="p-5 mb-4 bg-light rounded-3">  
+        <div class="container-fluid py-5">
          <div class="table-responsive">
             <table class="table">
                 <tr>
@@ -21,7 +61,7 @@
                       {{ "$%.2f"|format(products[id].price / 100) }} USD
                       {% if products[id].per %}per {{ products[id].per }}{% endif %}</td>
                     <td>
-                      <form method="POST" action="/cart/{{ id }}">
+                      <form method="POST" action=" {{ url_for('product_order', product_id=id) }}">
                         <input type="submit" value="Order Now!">
                       </form>
                     </td>
@@ -31,23 +71,32 @@
           </div>
         </div>
       </div>
-  
-      <div class="row align-items-md-stretch">
-        <div class="col-md-6">
-          <div class="h-100 p-5 text-bg-dark rounded-3">
-            <h2>Change the background</h2>
-            <p>Swap the background-color utility and add a `.text-*` color utility to mix up the jumbotron look. Then, mix and match with additional component themes and more.</p>
-            <button class="btn btn-outline-light" type="button">Example button</button>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="h-100 p-5 bg-light border rounded-3">
-            <h2>Add borders</h2>
-            <p>Or, keep it light and add a border for some added definition to the boundaries of your content. Be sure to look under the hood at the source HTML here as we've adjusted the alignment and sizing of both column's content for equal-height.</p>
-            <button class="btn btn-outline-secondary" type="button">Example button</button>
-          </div>
+      <!-- End of Miguel's example -->
+
+
+
+    <!-- Your original work -->
+    <div class="row align-items-md-stretch">
+      <h2>Your Original Work</h2>
+      <div class="col-md-6">
+        <div class="h-100 p-5 text-bg-dark rounded-3">
+          <h2>Change the background</h2>
+          <p>Swap the background-color utility and add a `.text-*` color utility to mix up the jumbotron look. Then, mix and match with additional component themes and more.</p>
+          <button class="btn btn-outline-light" type="button">Example button</button>
         </div>
       </div>
+      <div class="col-md-6">
+        <div class="h-100 p-5 bg-light border rounded-3">
+          <h2>Add borders</h2>
+          <p>Or, keep it light and add a border for some added definition to the boundaries of your content. Be sure to look under the hood at the source HTML here as we've adjusted the alignment and sizing of both column's content for equal-height.</p>
+          <button class="btn btn-outline-secondary" type="button">Example button</button>
+        </div>
+      </div>
+    </div>
+    <!-- End of your original work -->
 
+   
+    
+  
 
 {% endblock %}

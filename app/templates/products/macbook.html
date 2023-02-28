@@ -1,0 +1,44 @@
+{% extends "parent.html" %}
+
+
+{% block content %}
+
+    <div class="container py-4">
+
+
+       <!-- Product details -->
+       <div class="p-5 mb-4 bg-light rounded-3">
+        <div class="container-fluid py-5">
+          <div class="h-100 p-5 bg-light rounded-3">
+            <img class="mb-4 img img-fluid" style="width: 100%; height: 75%;" src="{{ url_for('static', filename='images/sample_products/macbook.jpg') }}" alt="Audio Technica">
+            <h2>MacBook Pro</h2>
+            <h3>Specs</h3>
+            <ul>
+              <li>Chip: Apple M2 chip</li>
+              <li>Media engine:	Hardware-accelerated H.264</li>
+              <li>Display: Retina display</li>
+              <li>Battery and Power1: Up to 17 hours wireless web</li>
+              <li>Memory: 8GB</li>
+            </ul>
+            <p>
+              Price: <strong>$ 1799</strong>
+            </p>
+            <button class="btn btn-outline-secondary" type="button">
+              <a href="{{ url_for('cart_macbook') }}">Add to Cart</a>
+            </button>
+            <button class="btn btn-outline-secondary" type="button">
+                <a href="{{ url_for('shop') }}">Continue Shopping</a>
+            </button>
+            <button class="btn btn-outline-secondary" type="button">
+                <a href="{{ url_for('cart') }}">Checkout</a>
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- End of Product details -->
+
+
+    
+  
+
+{% endblock %}
